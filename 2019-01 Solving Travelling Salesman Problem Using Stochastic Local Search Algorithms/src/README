@@ -1,0 +1,8 @@
+README
+
+1. sa.m & tabu.m are two independent programme. Run them separately.
+2. Make sure ulyss22.tsp is in the same folder as it before running. 
+3. Select one of them to put into MATLAB and click 'RUN' in the 'EDITOR' tab.
+4. The programme will plot a real-time update graph to help you understand how these algorithms going.
+
+Thanks for your reading :)
