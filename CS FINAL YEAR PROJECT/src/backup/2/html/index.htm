@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script type="text/javascript" src="../javascript/rem.js"></script>
+    <script src="../javascript/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="reactFrame"></div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJlfQuLewKJjyt_WpWZPJFic5Zyh3Tvm4&callback=initMap">
+    </script>
+
+    <script type="text/babel">
+      function Panel(props) {
+        return  <div>
+                  <div id="panel">
+                    <input type="text" id="search" onKeyUp="myFunction()" placeholder="Search a Campus Building"/>
+                    <select id="building">
+                      <option value="" selected="selected"></option>
+                      <option value="AstonWebbBBlock">Aston Webb B Block</option>
+                      <option value="AstonWebbGreatHall">Aston Webb Great Hall</option>
+                      <option value="WatsonBuilding">Watson Building (R15)</option>
+                      <option value="StaffHouse">Staff House (R24)</option>
+                    </select>
+                  </div>
+                  <div id="gatePop">
+                    <div id="whichGate">Please Select the Entrance</div>
+                    <button id="gateA"></button>
+                    <button id="gateB"></button>
+                  </div>
+                </div>
+                ;
+      }
+
+      const element = <Panel />;
+
+      ReactDOM.render(
+        element,
+        document.getElementById('reactFrame')
+      );
+    </script>
+
+
+    
+    <script type="text/javascript" src="../javascript/map.js"></script>
+
+    
+  </body>
+</html>

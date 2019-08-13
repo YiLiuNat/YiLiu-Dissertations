@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0183)https://www.my.bham.ac.uk/render.uP?uP_root=root&uP_sparam=activeTab&activeTab=u12l1s5459&uP_tparam=frm&frm=backLinked&uP_tparam=utf&utf=&/cp/ip/timeout?sys=webtimetables&url=dummyUrl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>my.bham - University of Birmingham</title><link type="text/css" rel="stylesheet" href="./portal.css"><link type="text/css" rel="stylesheet" href="./style.css"><link type="text/css" rel="stylesheet" href="./custom.css"><link type="text/css" rel="stylesheet" href="./style(1).css"><link type="text/css" rel="stylesheet" href="./cpAlert.css"><script src="./clientsniffer.js" language="JavaScript"></script><script src="./util.js" language="JavaScript"></script><script language="JavaScript">
+            setTimeout('initSession()', 1000);
+            
+        aan = new Image(39, 26);
+        aan.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/email_roll.gif";
+        office365n = new Image(39, 26);
+        office365n.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/office365_roll.gif";
+        bbn = new Image(39, 26);
+        bbn.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/calendar_roll.gif";
+        ccn = new Image(39, 26);
+        ccn.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/groups_roll.gif";
+        ddn = new Image(39, 26);
+        ddn.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/admin_roll.gif";
+        een = new Image(39, 26);
+        een.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/logout_roll.gif";
+        ffn = new Image(39, 26);
+        ffn.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/help_roll.gif";
+        aaf = new Image(39, 26);
+        aaf.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/email_dft.gif";
+        office365f = new Image(39, 26);
+        office365f.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/office365_dft.gif";
+        bbf = new Image(39, 26);
+        bbf.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/calendar_dft.gif";
+        ccf = new Image(39, 26);
+        ccf.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/groups_dft.gif";
+        ddf = new Image(39, 26);
+        ddf.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/admin_dft.gif";
+        eef = new Image(39, 26);
+        eef.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/logout_dft.gif";
+        fff = new Image(39, 26);
+        fff.src = "/media/org/jasig/portal/layout/dlm/skins/classic/controls/help_dft.gif";
+        function img_act(imgName)
+        {
+            document[imgName].src = eval(imgName + "n.src");
+        }
+        function img_inact(imgName)
+        {
+            document[imgName].src = eval(imgName + "f.src");
+        }
+        function center(width, height)
+        {
+            width = Math.min(screen.availWidth, width);
+            height = Math.min(screen.availHeight, height);
+            topMargin = parseInt((screen.availHeight - height)/2);
+            leftMargin = parseInt((screen.availWidth - width)/2);
+            return 'width='+width+',height='+height+',top='+topMargin+',left='+leftMargin;
+        }
+        var helpTag = "gen.main";
+        var isCourses = false;
+        var emailWindow;
+        
+        var jmain;
+        if( navigator.calWin != null )
+        {
+                jmain = navigator.calWin[0];
+        }
+        
+        if (self.name == "cpLogin") { self.name = "";}
+        var mainWindow = true;  
+  function unloadPage()
+  {
+      if(navigator.cpChildWindowList != null)
+      {
+          for( var i=0;
+               i < navigator.cpChildWindowList.length;
+               i++
+              )
+          {
+              var win = navigator.cpChildWindowList[i];
+              if(!win.closed)
+              {
+                  win.close();
+              }
+          }
+          navigator.cpChildWindowList = null;
+      }
+  }
+  function OpenHelp()
+  {
+      if (self.name == "nav")
+      {
+          parent.top.OpenHelp();
+      }
+      else
+      {
+          var unDefined;
+          var prefix = /*URL*/ "https://www.my.bham.ac.uk/cp/contexthelp/";
+          var url = helpTag;
+          if(navigator.cpChildWindowList == null)
+          {
+              navigator.cpChildWindowList = new Array();
+          }
+          if ( isCourses && parent.top.frames[1].helpTag != null)
+          { url = prefix + parent.top.frames[1].helpTag; }
+          else
+          { url = prefix + helpTag; }
+          stats='resizable=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+          stats += 'scrollbars=yes,width=650,height=475';
+          helpWindow = window.open (url,"helpWindow",stats);
+          setTimeout ("helpWindow.focus ()", 500);
+          navigator.cpChildWindowList[navigator.cpChildWindowList.length] = helpWindow;
+        }
+  }
+  function OpenWin(w, wURL, wStats)
+  {
+      if (self.name == "nav")
+      {
+          parent.top.OpenWin(w, wURL, wStats);
+      }
+      else
+      {
+              var unDefined;
+          if(navigator.cpChildWindowList == null)
+          {
+              navigator.cpChildWindowList = new Array();
+          }
+          if (w == "email")
+          {
+                stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+                stats += center(775, 550);
+              if (emailWindow)
+              {
+                  if (emailWindow.closed)
+                  {
+                        emailWindow = window.open ("https://www.my.bham.ac.uk/jsp/email/emailCenter.jsp?force=true","emailWindow",stats);
+                        setTimeout ("emailWindow.focus ()", 500);
+                        navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+                  }
+                  else
+                  {
+                      emailWindow.focus();
+                  }
+              }
+              else
+              {
+                    emailWindow = window.open ("https://www.my.bham.ac.uk/jsp/email/emailCenter.jsp?force=true","emailWindow",stats);
+                    setTimeout ("emailWindow.focus ()", 500);
+                    navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+              }
+          }
+          else if (w == "mua")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(775, 550);
+              if (emailWindow)
+              {
+                  if (emailWindow.closed)
+                  {
+                      emailWindow = window.open ("https://www.my.bham.ac.uk/cp/wu/mua","muaWindow",stats);
+                      setTimeout ("emailWindow.focus ()", 500);
+                      navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+                  }
+                  else
+                  {
+                      emailWindow.focus();
+                  }
+              }
+              else
+              {
+                  emailWindow = window.open ("https://www.my.bham.ac.uk/cp/wu/mua","muaWindow",stats);
+                  setTimeout ("emailWindow.focus ()", 500);
+                  navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+              }
+              }
+          else if (w == "groups")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(720,550);
+              groupsWindow = window.open (wURL,"groupsWindow",stats);
+              setTimeout ("groupsWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = groupsWindow;
+          }
+          else if (w == "calendar")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790,550);
+                    jmain = window.open ("https://www.my.bham.ac.uk/cp/wu/calendar_redirect","calendarWindow",stats);
+              calendarWindow = jmain;
+              setTimeout ("calendarWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow;
+          }
+          else if (w == "calendarinvite")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790,550);
+              calendarWindow = window.open ("https://www.my.bham.ac.uk/cp/wu/calendar_redirect","calendarWindow",stats);
+              setTimeout ("calendarWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow;
+              stats='resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(590,550);
+              calendarWindow2 = window.open ("https://www.my.bham.ac.uk/cp/wu/calendar_invite","calendarWindow2",stats);
+              setTimeout ("calendarWindow2.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow2;
+          }
+          else if (w == "admin")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790, 550);
+              adminWindow = window.open ("https://www.my.bham.ac.uk/jsp/admin/Admin.jsp","adminWindow",stats);
+              setTimeout ("adminWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = adminWindow;
+          }
+          else if (w == "webct")
+          {
+              webctWindow = window.open( wURL , 'webctWindow', wStats);
+              setTimeout ('webctWindow.focus ()', 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = webctWindow;
+          }
+      }
+  }
+  
+            var frameSrc = location.search;
+            if (frameSrc.indexOf('/content/') != -1)
+               { parent.top.helpTag = "announce.campus"; }
+            else if (frameSrc.indexOf ('/abm/') != -1)
+               { parent.top.helpTag = "announce.personal"; }
+            else if (frameSrc.indexOf('sys=is') != -1)
+               { parent.top.helpTag = "insp.main"; }
+            else if (frameSrc.indexOf('/school/schedule') != -1)
+               {
+                 parent.top.helpTag = "st.main";
+                 parent.top.isCourses = true;
+               }
+            else if (frameSrc.indexOf ('/school/main') != -1)
+               { parent.top.helpTag = "sis.main"; }
+            function openBrWindow(theURL,winName,features) {window.open(theURL,winName,features);}
+        </script></head><body class="main" marginwidth="0" marginheight="0"><script language="JavaScript">
+      
+      function alertAdminMessageOk()
+      {
+          hideAlertMessage();
+          doXmlPoll();
+      }
+      function alertTimeoutMessageOk()
+      {
+          hideAlertMessage();
+          resetTimeout();
+	  doXmlPoll();
+      }
+      function resetTimeout()
+      {
+          var xmlHttpRequest;
+          try
+          {
+              xmlHttpRequest = new XMLHttpRequest();
+          }
+          catch ( error )
+          {
+              xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlHttpRequest.open("GET", /*URL*/ "https://www.my.bham.ac.uk/cp/alert/rt", true);
+          xmlHttpRequest.send(null);
+	  window.status = "Sent request to /cp/alert/rt";
+      }
+      function alertTimeoutMessageLogout()
+      {
+          hideAlertMessage();
+          unloadPage();
+          window.top.location.href = /*URL*/ "https://www.my.bham.ac.uk/cp/home/logout?src=alert";
+      }
+      var savedRows;
+      var savedHeight;
+      var messageDialogTimer = 0;
+      function hideAlertMessage()
+      {
+          setElementVisibility( "alertSessionExpireMessageDiv", "hidden" );
+          setElementVisibility( "alertAdminMessageDiv", "hidden" );
+          if (isIE())
+          {       
+             var sessionAlertIframe = "alertSessionExpireMessageDiv"+"iframeDiv";
+             if ( document.getElementById(sessionAlertIframe) != null )
+             {            
+                 setElementVisibility( sessionAlertIframe, "hidden" );
+             }
+             var adminAlertIframe = "alertAdminMessageDiv"+"iframeDiv";
+             if ( document.getElementById(adminAlertIframe) != null )
+             {            
+                 setElementVisibility( adminAlertIframe, "hidden" );
+             }
+          }
+          
+          if ( savedHeight <= document.body.clientHeight )
+          {
+              top.document.body.rows = savedRows;
+          }
+	  if ( messageDialogTimer )
+          {
+              clearTimeout( messageDialogTimer );
+          }
+      }
+      function centerElementStyle( elementName )
+      {
+          var framed = 0;
+          height = document.body.clientHeight;
+          savedHeight = height;
+          savedRows = top.document.body.rows;
+          if ( height < 200 )
+          {
+              framed = 1;
+              top.document.body.rows = "200, 100%";
+          }
+          var element = document.getElementById( elementName );
+          elementLeft= document.body.clientWidth/2 - 200 + document.body.scrollLeft;
+          elementTop = document.body.clientHeight/2 - 112 + document.body.scrollTop;
+          if ( elementTop < 50 )
+          {
+              elementTop = 50;
+          }
+          if (framed == 1)
+          {
+              elementTop = 1;
+          }
+          element.style.left = elementLeft+'px'; 
+          element.style.top = elementTop+'px'; 
+          element.style.zIndex = 10;
+          if (isIE())
+          {
+              var iframeDivShim = elementName+"iframeDiv" ;
+             if ( document.getElementById(iframeDivShim) == null )
+             {       
+                 element.insertAdjacentHTML("afterEnd", '<IFRAME style="position: absolute;z-index:9;" src="javascript:false;" frameBorder="0" scrolling="no" id="'+iframeDivShim+'" />');
+             }
+             var iframeShim = document.getElementById(iframeDivShim);
+             iframeShim.style.top = element.style.top;
+             iframeShim.style.left = element.style.left;
+             iframeShim.style.width = element.offsetWidth;
+             iframeShim.style.height = element.offsetHeight;
+          } 
+          
+      }
+      function showAlertAdminMessage( message )
+      {
+          var messageParent = document.getElementById( "alertAdminMessageParent" );
+          if ( messageParent.childNodes[0] )
+          {
+              messageParent.removeChild( messageParent.childNodes[0] );
+          }
+          var messageText = document.createTextNode( message );
+          messageParent.appendChild( messageText );
+          centerElementStyle( "alertAdminMessageDiv" );
+          setElementVisibility( "alertSessionExpireMessageDiv", "hidden" );
+          setElementVisibility( "alertAdminMessageDiv", "visible" );
+          if (isIE())
+          {
+             setElementVisibility( "alertAdminMessageDiv"+"iframeDiv", "visible" );
+          }
+          
+          self.focus();
+      }
+      function showAlertSessionExpireMessage( timeRemaining )
+      {
+          centerElementStyle( "alertSessionExpireMessageDiv" );
+          setElementVisibility( "alertAdminMessageDiv", "hidden" );
+          setElementVisibility( "alertSessionExpireMessageDiv", "visible" );
+          if (isIE())
+          {
+              setElementVisibility( "alertSessionExpireMessageDiv"+"iframeDiv", "visible" );
+          }
+          
+          self.focus();
+	  messageDialogTimer =
+              setTimeout("alertTimeoutMessageLogout()", timeRemaining);
+      }
+      function setElementVisibility( elementId, visibility )
+      {
+          var element = document.getElementById( elementId );
+          element.style.visibility = visibility;
+      }
+      
+      function isIE()
+      {
+          return (document.all);
+      }
+      
+      
+    </script><div id="alertAdminMessageDiv"><table class="alertwarning" width="400" border="0" cellspacing="0" cellpadding="2"><tbody><tr><td><table class="alertwhite" width="100%" border="0" cellspacing="0" cellpadding="20"><tbody><tr><td align="center"><span class="alerttext12">This is a message from your system administrator:
+                <p id="alertAdminMessageParent"></p></span><img height="20" width="1" src="./dot-blank.gif"><br><form onsubmit="return false;" method="post" name="adminMessageButtonForm"><input onclick="alertAdminMessageOk();" value="OK" name="ok" type="submit"></form></td></tr></tbody></table></td></tr></tbody></table></div><div id="alertSessionExpireMessageDiv"><table class="alertwarning" width="400" border="0" cellspacing="0" cellpadding="2"><tbody><tr><td><form onsubmit="return false;" method="post" name="alertSessionExpireButtonForm"><table class="alertwhite" width="100%" border="0" cellspacing="0" cellpadding="20"><tbody><tr><td colspan="2" align="center">Your Luminis Platform session will expire shortly,<br>click OK to remain logged in.<img height="20" width="1" src="./dot-blank.gif"></td></tr><tr><td align="center"><input onclick="alertTimeoutMessageOk();" value="OK" size="8" name="ok" type="submit"></td><td align="center"><input onclick="alertTimeoutMessageLogout();" value="LOGOUT" size="8" name="logout" type="submit"></td></tr></tbody></table></form></td></tr></tbody></table></div><table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td valign="top"><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr class="bg1"><td nowrap="nowrap"><img title="School Logo" src="./image" height="30" border="0" alt="School Logo"></td></tr><tr><td class="bg3"><img width="1" title="" src="./transparent.gif" height="3" alt=""></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td width="100%" colspan="9"><img width="1" title="" src="./transparent.gif" height="3" alt=""></td></tr><tr><td><a target="_top" onmouseover="window.status=&#39;&#39;; return true;" href="https://www.my.bham.ac.uk/tag.2a48cd6bda95258e.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s5459&amp;uP_tparam=frm&amp;frm="><img width="14" vspace="2" src="./arrow_prev.gif" hspace="7" height="9" border="0" alt="Back tomy.timetablesTab" title="Back tomy.timetablesTab"></a></td><td width="100%" nowrap=""><span id="backto" class="uportal-text-small"><a target="_top" onmouseover="window.status=&#39;&#39;; return true;" href="https://www.my.bham.ac.uk/tag.2a48cd6bda95258e.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s5459&amp;uP_tparam=frm&amp;frm=">Back to<br><b>my.timetables&nbsp;Tab</b></a></span></td><td nowrap="" align="center"><a target="owa-win" onmouseover="img_act(&#39;office365&#39;); window.status=&#39;&#39;; return true;" onmouseout="img_inact(&#39;office365&#39;);" href="http://outlook.bham.ac.uk/"><img width="39" title="Office365 email" src="./office365_dft.gif" name="office365" hspace="6" height="26" border="0" alt="Office365 email"><br><span class="uportal-label">UG/PGT </span><br><span class="uportal-label">Email</span></a></td><td nowrap="" align="center"><a target="owa-win" onmouseover="img_act(&#39;aa&#39;); window.status=&#39;&#39;; return true;" onmouseout="img_inact(&#39;aa&#39;);" href="https://www.my.bham.ac.uk/cp/ip/timeout?sys=owa&amp;url=56772939;"><img width="39" title="Read E-mail" src="./email_dft.gif" name="aa" hspace="6" height="26" border="0" alt="Read E-mail"><br><span class="uportal-label">PGR</span><br><span class="uportal-label">Email</span></a></td><td nowrap="" align="center"><a onmouseover="img_act(&#39;cc&#39;); window.status=&#39;&#39;; return true;" onmouseout="img_inact(&#39;cc&#39;);" href="javascript:OpenWin(&#39;groups&#39;,&#39;/jsp/grouptools/frame/FrameSet.jsp?tab=1&amp;url=/jsp/grouptools/group/GroupMyGroups.jsp&#39;);"><img width="39" title="Find Working Groups, alt+g" src="./groups_dft.gif" name="cc" hspace="6" height="26" border="0" alt="Find Working Groups, alt+g"><br><span class="uportal-label">Groups</span><br><span class="uportal-label"><br></span></a></td><td><img width="2" title="" src="./app_divider.gif" hspace="7" height="36" alt=""></td><td align="center"><a target="_top" onmouseover="img_act(&#39;ee&#39;); window.status=&#39;&#39;; return true;" onmouseout="img_inact(&#39;ee&#39;);" onclick="unloadPage();" href="https://www.my.bham.ac.uk/up/Logout?uP_tparam=frm&amp;frm="><img width="39" title="Exit the Portal, alt+l" src="./logout_dft.gif" name="ee" hspace="6" height="26" border="0" alt="Exit the Portal, alt+l"><br><span class="uportal-label">Logout</span><span class="uportal-label"><br><br></span></a></td><td align="center"><a onmouseover="img_act(&#39;ff&#39;); window.status=&#39;&#39;; return true;" onmouseout="img_inact(&#39;ff&#39;);" href="javascript:OpenHelp();"><img width="39" title="Get help information for the portal, alt+q" src="./help_dft.gif" name="ff" hspace="6" height="26" border="0" alt="Get help information for the portal, alt+q"><br><span class="uportal-label">Help</span><span class="uportal-label"><br><br></span></a></td></tr><tr><td width="100%" colspan="9"><img width="1" title="" src="./transparent.gif" height="3" alt=""></td></tr></tbody></table></td></tr><tr><td valign="bottom"><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="bgtabon"><img width="1" title="" src="./transparent.gif" height="2" alt=""></td></tr></tbody></table></td></tr></tbody></table><script src="./timeout.jsp" language="JavaScript"></script></body></html>

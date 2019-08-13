@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script type="text/javascript" src="../javascript/rem.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <!-- <style>
+       /* Set the size of the div element that contains the map */
+      /*body {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+        -webkit-text-size-adjust:100%!important;
+        -webkit-touch-callout: none !important; 
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color:transparent;
+        -webkit-appearance:none;
+        
+      }
+
+      html {
+        font-size: 100px;
+        -ms-touch-action: none;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      #map {
+        position: absolute;
+        left: 0px;
+        bottom: 0rem;
+        height: 7rem;  
+        width: 100%;  
+       }
+
+       #panel {
+        position: absolute;
+        left: 0px;
+        top: 0rem;
+        height: 2.5rem;  
+        width: 100%;
+        background-color: black;
+        -webkit-box-sizing: border-box;
+       }
+
+       #building {
+        font-size: 0.3rem;
+        position: absolute;
+        left: 0.5rem;
+        top: 1rem;
+        width: 5rem;
+        height: 0.5rem;
+        /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAElBMVEUAAABmZmZtbW1mZmZmZmZmZmaPZyHQAAAABXRSTlMA1RV/I8PMOsoAAABZSURBVBjTVZDRCcAwCAWlIwT6n+zQTtAJSvbfJfA4P06IohfUZ32zsOupd3Sydq1/Au6RF0s1LgAPIFBKpAJqEBTQKKARwIm/uQGtPVTreFFJkDjJ1kF0qgMeaxCbAVusmQAAAABJRU5ErkJggg==) no-repeat center center;*/
+        background-size: 0.24rem 0.24rem;
+        
+       }*/
+    </style> -->
+  </head>
+  <body>
+
+    <div id="panel">
+      <select id="building">
+        <option value="" selected="selected"></option>
+        <option value="52.449216, -1.931401">Aston Webb B Block</option>
+        <option value="52.449093, -1.930821">Aston Webb Great Hall</option>
+        <option value="52.450322, -1.929126">Watson Building (R15)</option>
+      </select>
+    </div>
+    <div id="map"></div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJlfQuLewKJjyt_WpWZPJFic5Zyh3Tvm4&callback=initMap">
+    </script>
+    <script type="text/javascript" src="../javascript/map.js"></script>
+
+    
+  </body>
+</html>

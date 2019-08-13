@@ -1,0 +1,110 @@
+body {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  -webkit-text-size-adjust:100%!important;
+  -webkit-touch-callout: none !important; 
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color:transparent;
+  -webkit-appearance:none;
+  
+}
+
+html {
+  font-size: 100px;
+  -ms-touch-action: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#map {
+  position: absolute;
+  left: 0px;
+  bottom: 0rem;
+  height: 9rem;  
+  width: 100%;  
+ }
+
+ #panel {
+  position: absolute;
+  left: 0px;
+  top: 0rem;
+  height: 2.5rem;  
+  width: 100%;
+  background-color: grey;
+  -webkit-box-sizing: border-box;
+ }
+
+ #search {
+  font-size: 0.3rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.475rem;
+  top: 0.6rem;
+  width: 4.95rem;
+  height: 0.5rem;
+ }
+
+ #building {
+  font-size: 0.3rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.5rem;
+  top: 1.4rem;
+  width: 5rem;
+  height: 0.5rem;
+  /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAElBMVEUAAABmZmZtbW1mZmZmZmZmZmaPZyHQAAAABXRSTlMA1RV/I8PMOsoAAABZSURBVBjTVZDRCcAwCAWlIwT6n+zQTtAJSvbfJfA4P06IohfUZ32zsOupd3Sydq1/Au6RF0s1LgAPIFBKpAJqEBTQKKARwIm/uQGtPVTreFFJkDjJ1kF0qgMeaxCbAVusmQAAAABJRU5ErkJggg==) no-repeat center center;*/
+  background-size: 0.24rem 0.24rem;
+  
+ }
+
+ #gatePop {
+  position: absolute;
+  left: 0rem;
+  bottom: -3rem;
+  height: 3rem;
+  width: 100%;
+  background-color: white;
+ }
+
+ #whichGate {
+  position: absolute;
+  font-size: 0.4rem;
+  width: 5rem;
+  height: 1rem;
+  left: 50%;
+  margin-left: -2.5rem;
+  top: 0.2rem;
+ }
+
+ #gateA {
+  position: absolute;
+  width: 2.5rem;
+  height: 1.5rem;
+  left: 0.5rem;
+  top: 1rem;
+  background-color: grey;
+ }
+
+#gateB {
+  position: absolute;
+  width: 2.5rem;
+  height: 1.5rem;
+  right: 0.5rem;
+  top: 1rem;
+  background-color: grey;
+ }
+
+ #staffhouse1 {
+  position: absolute;
+  width: 2.5rem;
+  height: 1.5rem;
+  right: 0rem;
+  top: 0rem;
+ }

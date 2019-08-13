@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="../javascript/errDetect.js"></script>
+  	<script type="text/javascript" src="../javascript/rem.js"></script>
+    <script type="text/javascript" src="../javascript/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../javascript/lib/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="../javascript/lib/react.development.js"></script>
+    <script type="text/javascript" src="../javascript/lib/react-dom.development.js"></script>
+    <script type="text/javascript" src="../javascript/lib/babel.min.js"></script>
+    <script type="text/javascript" src="../javascript/lib/iscroll.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+<!--     <link rel="stylesheet" href="../css/swiper.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8"/>
+    <title>Timetable</title>
+  </head>
+
+<!--   <frameset id="frameset" rows="87,100%" framespacing="0" frameborder="0" border="0" data-gr-c-s-loaded="true"><frame src="../timetable/my.bham - University of Birmingham_files/render.html" scrolling="no" name="nav" marginwidth="0" marginheight="0" noresize="noresize"><frame src="../timetable/my.bham - University of Birmingham_files/timeout.html" scrolling="auto" name="content" marginwidth="0" marginheight="0" noresize="noresize"></frame></frameset> -->
+  <body>
+    <div id="map"></div>
+    <div id="reactFrame"></div>
+    <div>
+      <div id="panel">
+        <div id="btnsFrame">
+          <div id = "sideBarBtn"></div>
+          <div id = "calBtn"></div>
+          <div id = "cal">
+            <input id="setTime" type="text" placeholder="Enter a time"></input>
+            <div id="mondiv">
+              <span id="monspan">Mon</span><div id="monline"></div>
+            </div>
+            <div id="tuediv"><span id ="tuespan">Tue</span><div id ="tueline"></div></div>
+            <div id="weddiv"><span id ="wedspan">Wed</span><div id ="wedline"></div></div>
+            <div id="thudiv"><span id ="thuspan">Thur</span><div id ="thuline"></div></div>
+            <div id="fridiv"><span id ="frispan">Fri</span></div>
+          </div>
+          <input type="text" id="search" onKeyUp="myFunction()" placeholder="Search a Campus Building"/>
+          <select id="building">
+            <option value="" selected="selected"></option>
+            <option value="AstonW">Aston Webb B Block</option>
+            <option value="AstonWebbGreatHall">Aston Webb Great Hall</option>
+            <option value="Comput">Computer Science Building</option>
+            <option value="Educat">Education Vaughan Jeffreys</option>
+            <option value="Gisber">Gisbert Kapp Building</option>
+            <option value="Hawort">Haworth</option>
+            <option value="Metall">Metallurgy and Materials</option>
+            <option value="Muirhe">Muirhead Tower</option>
+            <option value="Murray">Murray Learning Centre</option>
+            <option value="Nuffie">Nuffield (G18)</option>
+            <option value="Univer">University House</option>
+            <option value="Watson">Watson Building (R15)</option>
+            <option value="StaffHouse">Staff House (R24)</option>
+            <option value="Library">Library</option>
+            <option value="Sports">Sports and Exercise</option>
+          </select>
+        </div>
+        <div id="reminder">
+          <span id="yourNextText">Your Next Lecture</span>
+          <div id="lecture"><span>You Don't Have Any Lectures</span></div>
+          <div id="time"></div>
+        </div>
+        <div id="tinyBtnsFrame">
+          <div id="btnsLine"></div>
+          <div id="studySpace"></div>
+          <div id="coffee"></div>
+          <div id="food"></div>
+          <div id="parking"></div>
+        </div>
+      </div>
+      <div id="gatePop">
+        <div id="whichGate">Please Select the Entrance</div>
+        <button id="gateA"></button>
+        <button id="gateB"></button>
+      </div>
+      <div id="sideBar">
+        <button id="sideBarClose">&#10005;</button>
+        <div id="sideBarContent">
+          <span id="settings">Settings</span>
+          <div id="sideBarLine"></div>
+          <button id="uploadBtn" type="button">Upload Your Timetable</button>
+          <input type="file" id="tableUpload"/>
+          <div id ="tableLog"><div id="scroller"></div></div>
+        </div>
+      </div>
+    </div>
+
+<!--     <script type="text/babel">
+      function Panel(props) {
+        return  <div>
+                  <div id="panel">
+                    <div id="btnsFrame">
+                      <div id = "sideBarBtn"></div>
+                      <div id = "calBtn"></div>
+                      <div id = "cal">
+                        <input id="setTime" type="text" placeholder="Enter a time"></input>
+                        <div id="mondiv">
+                          <span id="monspan">Mon</span><div id="monline"></div>
+                        </div>
+                        <div id="tuediv"><span id ="tuespan">Tue</span><div id ="tueline"></div></div>
+                        <div id="weddiv"><span id ="wedspan">Wed</span><div id ="wedline"></div></div>
+                        <div id="thudiv"><span id ="thuspan">Thur</span><div id ="thuline"></div></div>
+                        <div id="fridiv"><span id ="frispan">Fri</span></div>
+                      </div>
+                      <input type="text" id="search" onKeyUp="myFunction()" placeholder="Search a Campus Building"/>
+                      <select id="building">
+                        <option value="" selected="selected"></option>
+                        <option value="AstonW">Aston Webb B Block</option>
+                        <option value="AstonWebbGreatHall">Aston Webb Great Hall</option>
+                        <option value="Comput">Computer Science Building</option>
+                        <option value="Educat">Education Vaughan Jeffreys</option>
+                        <option value="Gisber">Gisbert Kapp Building</option>
+                        <option value="Metall">Metallurgy and Materials</option>
+                        <option value="Muirhe">Muirhead Tower</option>
+                        <option value="Murray">Murray Learning Centre</option>
+                        <option value="Nuffie">Nuffield (G18)</option>
+                        <option value="Univer">University House</option>
+                        <option value="Watson">Watson Building (R15)</option>
+                        <option value="StaffHouse">Staff House (R24)</option>
+                        <option value="Library">Library</option>
+                        <option value="Sports">Sports and Exercise</option>
+                      </select>
+                    </div>
+                    <div id="reminder">
+	                    <span id="yourNextText">Your Next Lecture</span>
+	                    <div id="lecture"><span>You Don't Have Any Lectures</span></div>
+	                    <div id="time"></div>
+                	</div>
+                  </div>
+                  <div id="gatePop">
+                    <div id="whichGate">Please Select the Entrance</div>
+                    <button id="gateA"></button>
+                    <button id="gateB"></button>
+                  </div>
+                  <div id="sideBar">
+                    <button id="sideBarClose">&#10005;</button>
+                    <div id="sideBarContent">
+                      <span id="settings">Settings</span>
+                      <div id="sideBarLine"></div>
+                      <button id="uploadBtn" type="button">Upload Your Timetable</button>
+                      <input type="file" id="tableUpload"/>
+                    </div>
+                  </div>
+                </div>
+
+                ;
+      }
+
+      const element = <Panel />;
+
+      ReactDOM.render(
+        element,
+        document.getElementById('reactFrame')
+      );
+    </script> -->
+
+    <script type="text/javascript" src="../javascript/lib/json3.min.js"></script>
+    <script type="text/javascript" src="../javascript/timetable.js"></script>
+    <script type="text/javascript" src="../javascript/latlngData.js"></script>
+    <script type="text/javascript" src="../javascript/errDetect.js"></script>
+    <script type="text/javascript" src="../javascript/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJlfQuLewKJjyt_WpWZPJFic5Zyh3Tvm4&callback=initMap"></script>
+  </body>
+
+</html>
